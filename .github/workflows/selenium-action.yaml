@@ -25,6 +25,11 @@ jobs:
         run: pip install pandas
       - name: Install Xlswriter 
         run: pip install xlsxwriter
+      - name: Install Openpyxl 
+        run : pip install openpyxl
+      - name: Install Beautifulsoup 
+        run: pip install beautifulsoup4
+      
       - name: Running the Python script
         run: python top_turnover.py
         
