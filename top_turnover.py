@@ -4,16 +4,12 @@ from collections import Counter
 import time 
 import xlsxwriter
 import pandas
-import requests
+
 import time
 from io import StringIO
 import numpy
 
-from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
-from openpyxl.styles import PatternFill, Border, Side, Font
-from openpyxl.worksheet.cell_range import CellRange
-
 from zbroker import total_turnover, data_collection
 
 
@@ -36,7 +32,7 @@ def sector_conversion1():
     return sector_name_conversion
 
 def sector_conversion(): 
-    with open('symbol (4).txt') as f:
+    with open('symbol.txt') as f:
         contents = f.readlines() 
         f.close()
     Allsectors = {}
@@ -52,7 +48,7 @@ def set_border(ws, cell_range):
             cell.border = Border(top=thin, left=thin, right=thin, bottom=thin)
         
 broker_name = broker_name_conversion()
-# data_collection()  
+data_collection()  
 
 df = pd.read_csv('buy_sell_broker_details.csv')
 
