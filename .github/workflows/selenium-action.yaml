@@ -23,7 +23,8 @@ jobs:
         run: sudo apt-get install xvfb
       - name: Install pandas
         run: pip install pandas
-
+      - name: Install Xlswriter 
+        run: pip install xlsxwriter
       - name: Running the Python script
         run: python top_turnover.py
         
