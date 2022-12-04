@@ -3,18 +3,18 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import time
-from PIL import Image
+
 import pandas as pd 
 from selenium.common.exceptions import NoSuchElementException
 import os 
-from shutil import rmtree
+
 from selenium.webdriver.common.keys import Keys 
 
 from bs4 import BeautifulSoup
 import re
 
 # Here Chrome  will be used
-driver = webdriver.Chrome(executable_path= '/home/laxmi/Documents/Kaggle_Project/chromedriver')
+driver = webdriver.Chrome(executable_path= 'chromedriver')
  
 # URL of website
 url = "https://www.nepalstock.com.np/floor-sheet"
