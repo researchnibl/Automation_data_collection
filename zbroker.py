@@ -11,7 +11,6 @@ from shutil import rmtree
 from selenium.webdriver.common.keys import Keys 
 
 from bs4 import BeautifulSoup
-import requests
 import re
 
 # Here Chrome  will be used
