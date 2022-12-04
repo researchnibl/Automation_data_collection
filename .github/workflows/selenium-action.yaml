@@ -22,7 +22,7 @@ jobs:
       - name: Install xvfb
         run: sudo apt-get install xvfb
       - name: Install pandas
-        run: sudo apt-get install pandas
+        run: pip install pandas
 
       - name: Running the Python script
         run: python top_turnover.py
