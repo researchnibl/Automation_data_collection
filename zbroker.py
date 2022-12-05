@@ -61,6 +61,9 @@ element = driver.find_element('xpath', "/html/body/app-root/div/main/div/app-flo
 driver.execute_script("arguments[0].click();", element)
 time.sleep(2)
 
+total_quantity = driver.find_element(by= By.XPATH, value='/html/body/app-root/div/main/div/app-floor-sheet/div/div[5]/div[1]/table/tbody/tr/td[2]').text
+print('Total Quantity', total_quantity)
+
 def total_turnover():
     total_turnover = driver.find_element(by= By.XPATH, value= '/html/body/app-root/div/main/div/app-floor-sheet/div/div[5]/div[1]/table/tbody/tr/td[1]').text
     return total_turnover
@@ -115,9 +118,8 @@ def data_collection():
 
     df = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
     df.to_csv('buy_sell_broker_details.csv'.format())
+    driver.close()
 
 
 
-total_quantity = driver.find_element(by= By.XPATH, value='/html/body/app-root/div/main/div/app-floor-sheet/div/div[5]/div[1]/table/tbody/tr/td[2]').text
-print(total_quantity)
-driver.close()
+
