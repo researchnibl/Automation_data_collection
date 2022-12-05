@@ -10,7 +10,7 @@ from io import StringIO
 import numpy
 
 from openpyxl.utils import get_column_letter
-from zbroker import total_turnover, data_collection
+from zbroker import data_collection
 
 
 def broker_name_conversion():
@@ -324,7 +324,6 @@ for i in range(len(df)):
 df_sector.to_csv('sectorwise.csv')
 sectorwise = df_sector.groupby('Sector')['Amount'].sum()
 sorted_x = sorted(sectorwise.items(), key=lambda kv: kv[1], reverse=True)
-
 
 c = 31
 for i in range(len(sorted_x)):
