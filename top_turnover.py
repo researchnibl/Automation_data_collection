@@ -48,7 +48,7 @@ def set_border(ws, cell_range):
             cell.border = Border(top=thin, left=thin, right=thin, bottom=thin)
         
 broker_name = broker_name_conversion()
-data_collection()  
+total_turnover = data_collection()  
 
 df = pd.read_csv('buy_sell_broker_details.csv')
 
@@ -325,7 +325,7 @@ df_sector.to_csv('sectorwise.csv')
 sectorwise = df_sector.groupby('Sector')['Amount'].sum()
 sorted_x = sorted(sectorwise.items(), key=lambda kv: kv[1], reverse=True)
 
-total_turnover = total_turnover()
+
 c = 31
 for i in range(len(sorted_x)):
     perc = sorted_x[i][1] / float(total_turnover.replace(",", ""))
