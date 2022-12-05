@@ -69,7 +69,8 @@ def total_turnover():
     return total_turnover
 def data_collection():
     # Items Per Page
-    
+    time.sleep(2)
+    total_turnover = driver.find_element(by= By.XPATH, value= '/html/body/app-root/div/main/div/app-floor-sheet/div/div[5]/div[1]/table/tbody/tr/td[1]').text
     try:
         select = Select( driver.find_element(by=By.XPATH, value="//select[@class='ng-untouched ng-pristine ng-valid']"))
         select.select_by_visible_text('500')
@@ -119,7 +120,7 @@ def data_collection():
     df = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
     df.to_csv('buy_sell_broker_details.csv'.format())
     driver.close()
-
+    return turnover
 
 
 
