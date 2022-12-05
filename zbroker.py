@@ -120,3 +120,4 @@ def data_collection():
 
 total_quantity = driver.find_element(by= By.XPATH, value='/html/body/app-root/div/main/div/app-floor-sheet/div/div[5]/div[1]/table/tbody/tr/td[2]').text
 print(total_quantity)
+driver.close()
