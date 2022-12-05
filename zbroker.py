@@ -120,7 +120,7 @@ def data_collection():
     df = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
     df.to_csv('buy_sell_broker_details.csv'.format())
     driver.close()
-    return turnover
+    return total_turnover
 
 
 
