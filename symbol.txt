@@ -1,0 +1,253 @@
+NEPSE Index,Index
+Banking SubIndex,Index
+Development Bank Index,Index
+Finance Index,Index
+Microfinance Index,Index
+Non Life Insurance,Index
+Life Insurance,Index
+HydroPower Index,Index
+Trading Index,Index
+Hotels And Tourism,Index
+Manufacturing And Processing,Index
+Others Index,Index
+Investment,Index
+Mutual Fund,Index
+NABIL,Commercial Banks
+SCB,Commercial Banks
+SBI,Commercial Banks
+EBL,Commercial Banks
+NICA,Commercial Banks
+MBL,Commercial Banks
+LBL,Commercial Banks
+SBL,Commercial Banks
+SHL,Hotels And Tourism
+TRH,Hotels And Tourism
+OHL,Hotels And Tourism
+NHPC,Hydro Power
+BPCL,Hydro Power
+CHCL,Hydro Power
+STC,Tradings
+BBC,Tradings
+NUBL,Microfinance
+CBBL,Microfinance
+DDBL,Microfinance
+SANIMA,Commercial Banks
+NABBC,Development Banks
+NICL,Non Life Insurance
+RBCL,Non Life Insurance
+NLICL,Life Insurance
+UIC,Non Life Insurance
+NIL,Non Life Insurance
+IGI,Non Life Insurance
+NLIC,Life Insurance
+LICN,Life Insurance
+PICL,Non Life Insurance
+SICL,Non Life Insurance
+NFS,Finance
+BNL,Manufacturing And Processing
+NLO,Manufacturing And Processing
+GUFL,Finance
+CIT,Investment
+BNT,Manufacturing And Processing
+UNL,Manufacturing And Processing
+BFC,Finance
+GFCL,Finance
+HDL,Manufacturing And Processing
+PFL,Finance
+NMB,Commercial Banks
+SIFC,Finance
+CFCL,Finance
+JFL,Finance
+PRVU,Commercial Banks
+SFCL,Finance
+GMFIL,Finance
+SWBBL,Microfinance
+ICFC,Finance
+EDBL,Development Banks
+NTC,Others
+PROFL,Finance
+CZBIL,Commercial Banks
+PCBL,Commercial Banks
+LBBL,Development Banks
+SRBL,Commercial Banks
+AHPC,Hydro Power
+MDB,Development Banks
+ALICL,Life Insurance
+NLBBL,Microfinance
+ADBL,Commercial Banks
+MLBL,Development Banks
+GBBL,Development Banks
+JBBL,Development Banks
+KRBL,Development Banks
+CORBL,Development Banks
+KSBBL,Development Banks
+MPFL,Finance
+SADBL,Development Banks
+SHINE,Development Banks
+MNBBL,Development Banks
+FMDBL,Microfinance
+MFIL,Finance
+NBL,Commercial Banks
+SLBBL,Microfinance
+NLG,Non Life Insurance
+SINDU,Development Banks
+GBLBS,Microfinance
+RLFL,Finance
+SHPC,Hydro Power
+NSLB,Microfinance
+KMCDB,Microfinance
+MLBBL,Microfinance
+LLBS,Microfinance
+MMFDB,Microfinance
+BARUN,Hydro Power
+VLBS,Microfinance
+CLBSL,Microfinance
+KLBSL,Microfinance
+JSLBB,Microfinance
+API,Hydro Power
+NMBMF,Microfinance
+GILB,Microfinance
+MERO,Microfinance
+HIDCL,Investment
+NGPL,Hydro Power
+GRDBL,Development Banks
+RSDC,Microfinance
+KKHC,Hydro Power
+DHPL,Hydro Power
+AKPL,Hydro Power
+FOWAD,Microfinance
+SPDL,Hydro Power
+UMHL,Hydro Power
+SMATA,Microfinance
+CHL,Hydro Power
+HPPL,Hydro Power
+MSLB,Microfinance
+NHDL,Hydro Power
+SMB,Microfinance
+USLB,Microfinance
+RADHI,Hydro Power
+PMHPL,Hydro Power
+KPCL,Hydro Power
+AKJCL,Hydro Power
+JOSHI,Hydro Power
+ACLBSL,Microfinance
+UPPER,Hydro Power
+SLBSL,Microfinance
+GHL,Hydro Power
+ALBSL,Microfinance
+SHIVM,Manufacturing And Processing
+UPCL,Hydro Power
+MHNL,Hydro Power
+PPCL,Hydro Power
+GMFBS,Microfinance
+HURJA,Hydro Power
+GLBSL,Microfinance
+SMFBS,Microfinance
+UNHPL,Hydro Power
+ILBS,Microfinance
+RHPL,Hydro Power
+SJCL,Hydro Power
+SABSL,Microfinance
+SAPDBL,Development Banks
+HDHPC,Hydro Power
+NRIC,Others
+NICLBSL,Microfinance
+SDLBSL,Microfinance
+NRN,Investment
+LEC,Hydro Power
+SSHL,Hydro Power
+MEN,Hydro Power
+UMRH,Hydro Power
+CGH,Hotels And Tourism
+NIFRA,Investment
+GLH,Hydro Power
+MLBSL,Microfinance
+SHEL,Hydro Power
+RURU,Hydro Power
+CHDC,Investment
+JBLB,Microfinance
+MKLB,Microfinance
+MKJC,Hydro Power
+MLBS,Microfinance
+SAHAS,Hydro Power
+TPC,Hydro Power
+SPC,Hydro Power
+NYADI,Hydro Power
+MBJC,Hydro Power
+BNHC,Hydro Power
+WNLB,Microfinance
+GIMES1,Mutual Fund
+LEMF,Mutual Fund
+NIBLPF,Mutual Fund
+NMBHF1,Mutual Fund
+NEF,Mutual Fund
+SAEF,Mutual Fund
+SEF,Mutual Fund
+CMF1,Mutual Fund
+NICGF,Mutual Fund
+NBF2,Mutual Fund
+CMF2,Mutual Fund
+NMB50,Mutual Fund
+SIGS2,Mutual Fund
+NICBF,Mutual Fund
+SFMF,Mutual Fund
+LUK,Mutual Fund
+SLCF,Mutual Fund
+KEF,Mutual Fund
+SBCF,Mutual Fund
+PSF,Mutual Fund
+NIBSF2,Mutual Fund
+NICSF,Mutual Fund
+RMF1,Mutual Fund
+NBF3,Mutual Fund
+MMF1,Mutual Fund
+ENL,Investment
+JALPA,Microfinance
+RULB,Microfinance
+NESDO,Microfinance
+GVL,Hydro Power
+SWMF,Microfinance
+BHL,Hydro Power
+ULBSL,Microfinance
+HBL,Commercial Banks
+RFPL,Hydro Power
+DORDI,Hydro Power
+NICFC,Mutual Fund
+KDBY,Mutual Fund
+BHDC,Hydro Power
+HHL,Hydro Power
+HEI,Non Life Insurance
+UHEWA,Hydro Power
+RIDI,Hydro Power
+USHEC,Hydro Power
+SGHC,Hydro Power 
+MHL,Hydro Power
+RHGCL,Hydro Power
+GIBF1,Mutual Fund
+AVYAN,Microfinance
+PPL,Hydro Power
+SPHL,Hydro Power
+DLBS,Microfinance
+KLBS,Microfinance
+SIKLES,Hydro Power
+NSIF2,Mutual Fund
+NIB,Commercial Banks
+NIBPO,Commercial Banks
+MEGA,Commercial Banks
+CBL,Commercial Banks
+RMDC,Microfinance
+SKBBL,Microfinance
+CCBL,Commercial Banks
+KBL,Commercial Banks
+CCBL,Commercial Banks
+SIL,Non Life Insurance
+PIC,Non Life Insurance
+PRIN,Non Life Insurance
+ADLB,Microfinance
+AIL,Non Life Insurance
+GBIME,Commercial Banks
+BOKL,Commercial Banks
+NMFBS,Microfinance
+NADEP,Microfinance
+SLI,Life Insurance
+SMFDB,Microfinance
