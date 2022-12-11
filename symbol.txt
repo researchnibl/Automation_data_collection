@@ -247,7 +247,5 @@ ADLB,Microfinance
 AIL,Non Life Insurance
 GBIME,Commercial Banks
 BOKL,Commercial Banks
-NMFBS,Microfinance
+NMFBS,Commercial Banks
 NADEP,Microfinance
-SLI,Life Insurance
-SMFDB,Microfinance
