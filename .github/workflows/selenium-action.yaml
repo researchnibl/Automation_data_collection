@@ -33,7 +33,7 @@ jobs:
       - name: Running the Python script
         run: python top_turnover.py
         
-      - name: Commit and Push The Results From Python Selenium Action
+      - name: Commit and Push The Results From Python Selenium Action 1
         run: |
          git config --global user.name "github-actions[bot]"
          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
