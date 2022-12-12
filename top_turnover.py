@@ -48,9 +48,9 @@ def set_border(ws, cell_range):
             cell.border = Border(top=thin, left=thin, right=thin, bottom=thin)
         
 broker_name = broker_name_conversion()
-total_turnover = data_collection()  
-
-df = pd.read_csv('buy_sell_broker_details.csv')
+# total_turnover = data_collection()  
+total_turnover = '10000000'
+df = pd.read_csv(f'data/buy_sell_broker_details_{date.today()}.csv')
 
 buybroker = df.groupby('Buyer Broker')['Amount'].sum()
 buy = buybroker.to_dict()
@@ -93,11 +93,15 @@ all_buyer_details= {}
 all_seller_details= {}
 
 for i in range(len(top_7_broker_list)):
-  df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
+  df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
+  print(df_top_buy)
   if df_top_buy.empty:
-    df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
+    
+    df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i])]
+    print(df_top_buy)
     if df_top_buy.empty:
-        df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i])]
+        df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
+        print(df_top_buy)
     try:
         df_top_sell = df[df['Seller Broker'] == top_7_broker_list[i]]
         if df_top_sell.empty:
@@ -111,7 +115,8 @@ for i in range(len(top_7_broker_list)):
     top_seller = dict(Counter(dict(df_top_sell.groupby('Stock Symbol')['Amount'].sum())).most_common(5))
     all_buyer_details['top_{}_buyer'.format(i+1)] = top_buyer
     all_seller_details['top_{}_seller'.format(i+1)] = top_seller
-
+print('All buyer', all_buyer_details)
+print('All Seller', all_seller_details)
 #top_traded_stock
 traded = df.groupby('Stock Symbol')['Amount'].sum()
 top_5_traded = dict(Counter(dict(traded)).most_common(5))
@@ -126,7 +131,7 @@ def fillXL(worksheet, ColName, From, To, ValuesArr, format1, format2):
         worksheet.write(ColName + str(i), ValuesArr[count], format2)
     count += 1
 
-writer = pd.ExcelWriter('Top 7 broker List with its Turnover ' + time.strftime('%Y-%m-%d', time.localtime(time.time() + 20700)) + '.xlsx', engine='xlsxwriter')
+writer = pd.ExcelWriter('Daily_Report/Top 7 broker List with its Turnover ' + time.strftime('%Y-%m-%d', time.localtime(time.time() + 20700)) + '.xlsx', engine='xlsxwriter')
 workbook  = writer.book
 worksheet = workbook.add_worksheet('Top 7 Broker List')
 format = workbook.add_format({'num_format': '0.00'})
@@ -315,7 +320,7 @@ for key, value in top_5_traded.items():
 
 ''' Sector Wise Data'''
 sector = sector_conversion()
-print(len(sector))
+
 df_sector = df.copy()
 for i in range(len(df)):
     try:
@@ -354,19 +359,19 @@ all_buyer_sector= {}
 all_seller_sector= {}
 for i in range(len(top_7_broker_list)):
     try:
-        df_top_buy = df_sector[df_sector['Buyer Broker'] == top_7_broker_list[i]]
+        df_top_buy = df_sector[df_sector['Buyer Broker'] == int(top_7_broker_list[i])]
         if df_top_buy.empty:
-            df_top_buy = df_sector[df_sector['Buyer Broker'] == int(top_7_broker_list[i])]
+            df_top_buy = df_sector[df_sector['Buyer Broker'] == str(top_7_broker_list[i])]
             if df_top_buy.empty:
-                df_top_buy = df_sector[df_sector['Buyer Broker'] == str(top_7_broker_list[i])]
+                df_top_buy = df_sector[df_sector['Buyer Broker'] == top_7_broker_list[i]]
     except:
         df_top_buy = df_sector[df_sector['Buyer Broker'] == str(' ' + str(top_7_broker_list[i])+ ' ')]
     try:
-        df_top_sell = df_sector[df_sector['Seller Broker'] == top_7_broker_list[i]]
+        df_top_sell = df_sector[df_sector['Seller Broker'] == int(top_7_broker_list[i])]
         if df_top_sell.empty:
-            df_top_sell = df_sector[df_sector['Seller Broker'] == int(top_7_broker_list[i])]
+            df_top_sell = df_sector[df_sector['Seller Broker'] == str(top_7_broker_list[i])]
             if df_top_sell.empty:
-                df_top_sell = df_sector[df_sector['Seller Broker'] == str(top_7_broker_list[i])]
+                df_top_sell = df_sector[df_sector['Seller Broker'] == top_7_broker_list[i]]
     except:
         df_top_sell = df_sector[df_sector['Seller Broker'] == str(' ' + str(top_7_broker_list[i])+ ' ')]
 
@@ -498,8 +503,6 @@ for col in range(2, 23, 3):
     color = color + 1
     id = id + 1
     seller = seller + 1
-
-
 
 writer.save()
 print('Complete all ')

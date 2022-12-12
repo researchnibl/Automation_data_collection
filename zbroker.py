@@ -15,37 +15,50 @@ import re
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-import chromedriver_autoinstaller
-from pyvirtualdisplay import Display
-display = Display(visible=0, size=(800, 800))  
-display.start()
 
-chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
-                                      # and if it doesn't exist, download it automatically,
-                                      # then add chromedriver to path
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+import time
+from PIL import Image
 
-chrome_options = webdriver.ChromeOptions()    
-# Add your options as needed    
-options = [
-  # Define window size here
-   "--window-size=1200,1200",
-    "--ignore-certificate-errors"
+from shutil import rmtree
+
+
+# Here Chrome  will be used
+driver = webdriver.Chrome(executable_path= '/home/laxmi/Documents/Kaggle_Project/chromedriver')
+# import chromedriver_autoinstaller
+# from pyvirtualdisplay import Display
+# display = Display(visible=0, size=(800, 800))  
+# display.start()
+
+# chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
+#                                       # and if it doesn't exist, download it automatically,
+#                                       # then add chromedriver to path
+
+# chrome_options = webdriver.ChromeOptions()    
+# # Add your options as needed    
+# options = [
+#   # Define window size here
+#    "--window-size=1200,1200",
+#     "--ignore-certificate-errors"
  
-    #"--headless",
-    #"--disable-gpu",
-    #"--window-size=1920,1200",
-    #"--ignore-certificate-errors",
-    #"--disable-extensions",
-    #"--no-sandbox",
-    #"--disable-dev-shm-usage",
-    #'--remote-debugging-port=9222'
-]
+#     #"--headless",
+#     #"--disable-gpu",
+#     #"--window-size=1920,1200",
+#     #"--ignore-certificate-errors",
+#     #"--disable-extensions",
+#     #"--no-sandbox",
+#     #"--disable-dev-shm-usage",
+#     #'--remote-debugging-port=9222'
+# ]
 
-for option in options:
-    chrome_options.add_argument(option)
+# for option in options:
+#     chrome_options.add_argument(option)
 
     
-driver = webdriver.Chrome(options = chrome_options)
+# driver = webdriver.Chrome(options = chrome_options)
 
 # Here Chrome  will be used
 # driver = webdriver.Chrome(executable_path= 'chromedriver')
@@ -118,7 +131,7 @@ def data_collection():
             df1.to_csv('buy_sell_broker_except.csv'.format())
 
     df = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
-    df.to_csv('buy_sell_broker_details.csv')
+    df.to_csv(f'data/buy_sell_broker_details_{date.today()}.csv')
     driver.close()
     return total_turnover
 
