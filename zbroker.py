@@ -7,7 +7,7 @@ import time
 import pandas as pd 
 from selenium.common.exceptions import NoSuchElementException
 import os 
-
+from datetime import date
 from selenium.webdriver.common.keys import Keys 
 
 from bs4 import BeautifulSoup
@@ -118,7 +118,7 @@ def data_collection():
             df1.to_csv('buy_sell_broker_except.csv'.format())
 
     df = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
-    df.to_csv('buy_sell_broker_details.csv'.format())
+    df.to_csv(f'buy_sell_broker_details_{date.today()}.csv')
     driver.close()
     return total_turnover
 
