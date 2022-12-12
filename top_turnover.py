@@ -5,7 +5,7 @@ import time
 import xlsxwriter
 import pandas
 
-import time
+from datetime import date
 from io import StringIO
 import numpy
 
@@ -50,7 +50,7 @@ def set_border(ws, cell_range):
 broker_name = broker_name_conversion()
 total_turnover = data_collection()  
 
-df = pd.read_csv('buy_sell_broker_details.csv')
+df = pd.read_csv(f'data/buy_sell_broker_details_{date.today()}.csv')
 
 buybroker = df.groupby('Buyer Broker')['Amount'].sum()
 buy = buybroker.to_dict()
@@ -96,12 +96,20 @@ print(df['Seller Broker'])
 for i in range(len(top_7_broker_list)):
     try:
         df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
+        if df_top_buy.empty:
+            df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i]])
+            if df_top_buy.empty:
+                df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i]])
     except:
         
         df_top_buy = df[df['Buyer Broker'] == str(' ' + str(top_7_broker_list[i])+ ' ')]
         
     try:
         df_top_sell = df[df['Seller Broker'] == top_7_broker_list[i]]
+        if df_top_sell.empty:
+            df_top_sell = df[df['Seller Broker'] == int(top_7_broker_list[i]])
+            if df_top_sell.empty:
+                df_top_sell = df[df['Seller Broker'] == str(top_7_broker_list[i]]) 
     except:
         df_top_sell = df[df['Seller Broker'] == str(' ' + str(top_7_broker_list[(i)])+ ' ')]
 
@@ -352,14 +360,19 @@ all_buyer_sector= {}
 all_seller_sector= {}
 for i in range(len(top_7_broker_list)):
     try:
-        
         df_top_buy = df_sector[df_sector['Buyer Broker'] == top_7_broker_list[i]]
-        
+        if df_top_buy.empty:
+            df_top_buy = df_sector[df_sector['Buyer Broker'] == int(top_7_broker_list[i]])
+            if df_top_buy.empty:
+                df_top_buy = df_sector[df_sector['Buyer Broker'] == str(top_7_broker_list[i]])
     except:
         df_top_buy = df_sector[df_sector['Buyer Broker'] == str(' ' + str(top_7_broker_list[i])+ ' ')]
     try:
-        
         df_top_sell = df_sector[df_sector['Seller Broker'] == top_7_broker_list[i]]
+        if df_top_sell.empty:
+            df_top_sell = df_sector[df_sector['Seller Broker'] == int(top_7_broker_list[i]])
+            if df_top_sell.empty:
+                df_top_sell = df_sector[df_sector['Seller Broker'] == str(top_7_broker_list[i]])
     except:
         df_top_sell = df_sector[df_sector['Seller Broker'] == str(' ' + str(top_7_broker_list[i])+ ' ')]
 
