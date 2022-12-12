@@ -25,9 +25,6 @@ from PIL import Image
 
 from shutil import rmtree
 
-
-# Here Chrome  will be used
-driver = webdriver.Chrome(executable_path= '/home/laxmi/Documents/Kaggle_Project/chromedriver')
 import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))  
