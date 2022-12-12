@@ -118,7 +118,7 @@ def data_collection():
             df1.to_csv('buy_sell_broker_except.csv'.format())
 
     df = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
-    df.to_csv(f'buy_sell_broker_details_{date.today()}.csv')
+    df.to_csv('buy_sell_broker_details.csv')
     driver.close()
     return total_turnover
 
