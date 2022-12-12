@@ -21,7 +21,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import time
-from PIL import Image
+
 
 from shutil import rmtree
 
