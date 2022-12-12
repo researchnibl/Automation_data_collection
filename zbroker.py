@@ -52,7 +52,7 @@ driver = webdriver.Chrome(options = chrome_options)
  
 # URL of website
 url = "https://www.nepalstock.com.np/floor-sheet"
- 
+print('Collecting the data')
 # # Opening the website
 driver.get(url)
 time.sleep(10)
