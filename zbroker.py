@@ -57,7 +57,7 @@ for option in options:
     
 driver = webdriver.Chrome(options = chrome_options)
 
-Here Chrome  will be used
+# Here Chrome  will be used
 driver = webdriver.Chrome(executable_path= 'chromedriver')
  
 # URL of website
