@@ -50,7 +50,7 @@ def set_border(ws, cell_range):
 broker_name = broker_name_conversion()
 total_turnover = data_collection()  
 
-df = pd.read_csv(f'data/buy_sell_broker_details_{date.today()}.csv')
+df = pd.read_csv('buy_sell_broker_details.csv')
 
 buybroker = df.groupby('Buyer Broker')['Amount'].sum()
 buy = buybroker.to_dict()
@@ -91,8 +91,7 @@ top_7_broker_list = top_7_broker['Broker'].to_list()
 #Top Buyer/seller Top 5 Stocks
 all_buyer_details= {}
 all_seller_details= {}
-print(df[df['Seller Broker'] == int(top_7_broker_list[2])])
-print(df['Seller Broker'])
+
 for i in range(len(top_7_broker_list)):
     try:
         df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
