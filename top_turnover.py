@@ -48,8 +48,8 @@ def set_border(ws, cell_range):
             cell.border = Border(top=thin, left=thin, right=thin, bottom=thin)
         
 broker_name = broker_name_conversion()
-# total_turnover = data_collection()  
-total_turnover = '10000000'
+total_turnover = data_collection()  
+
 df = pd.read_csv(f'data/buy_sell_broker_details_{date.today()}.csv')
 
 buybroker = df.groupby('Buyer Broker')['Amount'].sum()
