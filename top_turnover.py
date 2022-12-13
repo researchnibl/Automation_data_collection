@@ -70,12 +70,12 @@ for i in range(1, 60):
             
             buy_amount = buy[str(i)]
         except:
-            buy_amount = 0
+            buy_amount = buy[int(i)]
         try:
             
-            sell_amount = sell[str(i)]
+            sell_amount = sell[int(i)]
         except:
-            sell_amount = 0
+            sell_amount = sell[str(i)]
         df_data.loc[i, 'Buy'] = buy_amount
         df_data.loc[i, 'Sell'] = sell_amount
         df_data.loc[i, 'Turnover'] = buy_amount + sell_amount
