@@ -95,14 +95,11 @@ all_seller_details= {}
 
 for i in range(len(top_7_broker_list)):
   df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i])]
-  print(df_top_buy)
   if df_top_buy.empty:
-    
     df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
-    print(df_top_buy)
     if df_top_buy.empty:
         df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
-        print(df_top_buy)
+        
     try:
         df_top_sell = df[df['Seller Broker'] == str(top_7_broker_list[i])]
         if df_top_sell.empty:
@@ -111,9 +108,11 @@ for i in range(len(top_7_broker_list)):
                 df_top_sell = df[df['Seller Broker'] == top_7_broker_list[i]]
     except:
         df_top_sell = df[df['Seller Broker'] == str(' ' + str(top_7_broker_list[(i)])+ ' ')]
-
+    print(df_top_buy)
+    print(df_top_sell)
     top_buyer = dict(Counter(dict(df_top_buy.groupby('Stock Symbol')['Amount'].sum())).most_common(5))
     top_seller = dict(Counter(dict(df_top_sell.groupby('Stock Symbol')['Amount'].sum())).most_common(5))
+    print(top_buyer, top_seller)
     all_buyer_details['top_{}_buyer'.format(i+1)] = top_buyer
     all_seller_details['top_{}_seller'.format(i+1)] = top_seller
 print('All buyer', all_buyer_details)
