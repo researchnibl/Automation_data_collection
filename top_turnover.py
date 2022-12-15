@@ -368,9 +368,9 @@ for i in range(len(top_7_broker_list)):
     except:
         df_top_buy = df_sector[df_sector['Buyer Broker'] == str(' ' + str(top_7_broker_list[i])+ ' ')]
     try:
-        df_top_sell = df_sector[df_sector['Seller Broker'] == int(top_7_broker_list[i])]
+        df_top_sell = df_sector[df_sector['Seller Broker'] == str(top_7_broker_list[i])]
         if df_top_sell.empty:
-            df_top_sell = df_sector[df_sector['Seller Broker'] == str(top_7_broker_list[i])]
+            df_top_sell = df_sector[df_sector['Seller Broker'] == int(top_7_broker_list[i])]
             if df_top_sell.empty:
                 df_top_sell = df_sector[df_sector['Seller Broker'] == top_7_broker_list[i]]
     except:
