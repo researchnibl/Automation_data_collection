@@ -11,6 +11,7 @@ import numpy
 
 from openpyxl.utils import get_column_letter
 from zbroker import data_collection
+from email_sent import email_sent
 
 
 def broker_name_conversion():
@@ -505,4 +506,7 @@ for col in range(2, 23, 3):
     seller = seller + 1
 
 writer.save()
-print('Complete all ')
+
+#Email send Automatic 
+email_sent()
+print('Complete all and Sending Email ')
