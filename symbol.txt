@@ -255,3 +255,4 @@ NCCB,Commercial Banks
 SHLB,Microfinance
 PHCL,Hydro Power
 EHPL,Hydro Power
+RLI,Life Insurance

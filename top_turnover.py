@@ -94,16 +94,16 @@ all_buyer_details= {}
 all_seller_details= {}
 
 for i in range(len(top_7_broker_list)):
-  df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i])]
+  df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
   if df_top_buy.empty:
-    df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
+    df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i])]
     if df_top_buy.empty:
         df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
         
     try:
-        df_top_sell = df[df['Seller Broker'] == str(top_7_broker_list[i])]
+        df_top_sell = df[df['Seller Broker'] == int(top_7_broker_list[i])]
         if df_top_sell.empty:
-            df_top_sell = df[df['Seller Broker'] == int(top_7_broker_list[i])]
+            df_top_sell = df[df['Seller Broker'] == str(top_7_broker_list[i])]
             if df_top_sell.empty:
                 df_top_sell = df[df['Seller Broker'] == top_7_broker_list[i]]
     except:
