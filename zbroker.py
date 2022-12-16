@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-import time
 
 import pandas as pd 
 from selenium.common.exceptions import NoSuchElementException
@@ -31,8 +30,8 @@ display = Display(visible=0, size=(800, 800))
 display.start()
 
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
-                                      # and if it doesn't exist, download it automatically,
-                                      # then add chromedriver to path
+                                    #   and if it doesn't exist, download it automatically,
+                                    #   then add chromedriver to path
 
 chrome_options = webdriver.ChromeOptions()    
 # Add your options as needed    
@@ -59,7 +58,8 @@ driver = webdriver.Chrome(options = chrome_options)
 
 # Here Chrome  will be used
 driver = webdriver.Chrome(executable_path= 'chromedriver')
- 
+
+# driver = webdriver.Chrome(executable_path= '/home/laxmi/Documents/Kaggle_Project/chromedriver')
 # URL of website
 url = "https://www.nepalstock.com.np/floor-sheet"
 print('Collecting the data')
@@ -121,7 +121,7 @@ def data_collection():
             element = driver.find_element('xpath', '/html/body/app-root/div/main/div/app-floor-sheet/div/div[5]/div[2]/pagination-controls/pagination-template/ul/li[10]/a')
             driver.execute_script("arguments[0].click();", element) 
             time.sleep(3)
-            print(j)
+            print('Page no in Nepse Website', j)
         except: 
             print('Complete all files')
             df1 = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])

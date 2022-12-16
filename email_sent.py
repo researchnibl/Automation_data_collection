@@ -28,7 +28,8 @@ def email_sent():
     msg.attach(MIMEText(body, 'plain'))
 
     filename = f"Top 7 broker List weekly {date.today()}.xlsx"
-    attachment = open(f"Daily_Report/Top 7 broker List weekly {date.today()}.xlsx", "rb")
+    
+    attachment = open(f"Daily_Report/Top 7 broker List with its Turnover {date.today()}.xlsx", "rb")
 
     part = MIMEBase('application', 'octet-stream')
     part.set_payload((attachment).read())
@@ -43,3 +44,5 @@ def email_sent():
         smtp.login(email_address, email_password)
         smtp.send_message(msg)
     print('Email send successfully')
+    
+
