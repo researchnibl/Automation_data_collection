@@ -32,7 +32,7 @@ jobs:
       - name: Install smpt
         run: pip install secure-smtplib
       - name: Install email
-        run: pip install email
+        run: pip install email-to
       
       - name: Running the Python script
         run: python top_turnover.py
