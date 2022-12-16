@@ -14,15 +14,15 @@ from datetime import date
 # set your email and password
 # please use App Password
 def email_sent():
-    email_address = "tiwarilaxuu@gmail.com"
-    email_password = "nxalheglkybmzdls"
+    email_address = "research.niblace@gmail.com"
+    email_password = "xladtuspqhbvliqy"
 
     # create email
     # msg = EmailMessage()
     msg = MIMEMultipart()
     msg['Subject'] = "Daily Report Sent"
-    msg['From'] = 'tiwarilaxuu@gmail.com'
-    msg['To'] = "research.niblace@gmail.com"
+    msg['From'] = 'research.niblace@gmail.com'
+    msg['To'] = ["tiwarilaxuu@gmail.com", 'abhishek@niblcapital.com']
     body = f"Daily Broker Report {date.today()}. This is automatic sent from Python  "
 
     msg.attach(MIMEText(body, 'plain'))
