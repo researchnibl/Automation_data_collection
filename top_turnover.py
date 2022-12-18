@@ -507,5 +507,5 @@ for col in range(2, 23, 3):
 writer.save()
 
 #Email send Automatic 
-email_sent()
+# email_sent()
 print('Complete all and Sending Email ')
