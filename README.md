@@ -6,4 +6,5 @@ Then goto actions for running this code
 ![alt text](image/img2.png)
 
 
+CLick on Run selenium on github actions and click on the Run Workflow. 
 ![alt text](image/img3.png)
