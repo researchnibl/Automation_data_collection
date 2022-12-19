@@ -242,7 +242,7 @@ KBL,Commercial Banks
 SIL,Non Life Insurance
 PIC,Non Life Insurance
 PRIN,Non Life Insurance
-ADLB,Microfinance
+ADLB,Microfinances
 AIL,Non Life Insurance
 GBIME,Commercial Banks
 BOKL,Commercial Banks
@@ -256,3 +256,4 @@ SHLB,Microfinance
 PHCL,Hydro Power
 EHPL,Hydro Power
 RLI,Life Insurance
+AKBSL,Microfinance
