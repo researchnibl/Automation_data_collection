@@ -87,29 +87,28 @@ df_data.to_csv('all_broker_details.csv')
 
 top_7_broker = df_data.sort_values(by= ['Turnover'], ascending= False)[:7]
 top_7_broker_list = top_7_broker['Broker'].to_list()
-
+print(type(top_7_broker_list))
+print(top_7_broker_list)
 #TOP-5 Buyer/seller on the basis of Broker
 #Top Buyer/seller Top 5 Stocks
 all_buyer_details= {}
 all_seller_details= {}
 
 for i in range(len(top_7_broker_list)):
-  df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
+  df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i])]
   if df_top_buy.empty:
-    df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i])]
+    df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
     if df_top_buy.empty:
         df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
         
     try:
-        df_top_sell = df[df['Seller Broker'] == int(top_7_broker_list[i])]
+        df_top_sell = df[df['Seller Broker'] == str(top_7_broker_list[i])]
         if df_top_sell.empty:
-            df_top_sell = df[df['Seller Broker'] == str(top_7_broker_list[i])]
+            df_top_sell = df[df['Seller Broker'] == int(top_7_broker_list[i])]
             if df_top_sell.empty:
                 df_top_sell = df[df['Seller Broker'] == top_7_broker_list[i]]
     except:
         df_top_sell = df[df['Seller Broker'] == str(' ' + str(top_7_broker_list[(i)])+ ' ')]
-    print(df_top_buy)
-    print(df_top_sell)
     top_buyer = dict(Counter(dict(df_top_buy.groupby('Stock Symbol')['Amount'].sum())).most_common(5))
     top_seller = dict(Counter(dict(df_top_sell.groupby('Stock Symbol')['Amount'].sum())).most_common(5))
     print(top_buyer, top_seller)

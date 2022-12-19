@@ -124,12 +124,13 @@ def data_collection():
             print('Page no in Nepse Website', j)
         except: 
             print('Complete all files')
-            df1 = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
-            df1.to_csv('buy_sell_broker_except.csv'.format())
+            # df1 = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
+            # df1.to_csv('buy_sell_broker_except.csv'.format())
 
     df = pd.DataFrame(details, columns= ['S.N.', 'Contract No', 'Stock Symbol', 'Buyer Broker', 'Seller Broker', 'Quantity', 'Rate', 'Amount'])
     df.to_csv(f'data/buy_sell_broker_details_{date.today()}.csv')
     driver.close()
+    print('Total TurnOver', total_turnover)
     return total_turnover
 
 
