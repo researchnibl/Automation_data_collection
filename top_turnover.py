@@ -49,8 +49,8 @@ def set_border(ws, cell_range):
             cell.border = Border(top=thin, left=thin, right=thin, bottom=thin)
         
 broker_name = broker_name_conversion()
-total_turnover = data_collection()  
-
+# total_turnover = data_collection()  
+total_turnover = '930,839,901.14'
 df = pd.read_csv(f'data/buy_sell_broker_details_{date.today()}.csv')
 
 buybroker = df.groupby('Buyer Broker')['Amount'].sum()
@@ -87,31 +87,47 @@ df_data.to_csv('all_broker_details.csv')
 
 top_7_broker = df_data.sort_values(by= ['Turnover'], ascending= False)[:7]
 top_7_broker_list = top_7_broker['Broker'].to_list()
-print(type(top_7_broker_list))
+
 print(type(top_7_broker_list[0]))
 #TOP-5 Buyer/seller on the basis of Broker
 #Top Buyer/seller Top 5 Stocks
 all_buyer_details= {}
 all_seller_details= {}
-
+df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[0])]
+top_buyer = dict(Counter(dict(df_top_buy.groupby('Stock Symbol')['Amount'].sum())).most_common(5))
+print(top_buyer)
+df_top_sell = df[df['Seller Broker'] == int(top_7_broker_list[0])]
+print(type(df['Seller Broker'][0]))
+print(type(df['Buyer Broker'][0]))
+if type(df['Buyer Broker'][0]) == numpy.int64:
+    b = int
+else:
+    b= str
+if type(df['Seller Broker'][0]) == numpy.int64:
+    s = int
+else:
+    s = str
 for i in range(len(top_7_broker_list)):
-  df_top_buy = df[df['Buyer Broker'] == str(top_7_broker_list[i])]
-  if df_top_buy.empty:
-    df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
-    if df_top_buy.empty:
-        df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
+    print('B', b)
+    df_top_buy = df[df['Buyer Broker'] == b(top_7_broker_list[i])]
+    # print(df_top_buy)
+#   if df_top_buy.empty:
+#     df_top_buy = df[df['Buyer Broker'] == int(top_7_broker_list[i])]
+#     if df_top_buy.empty:
+#         df_top_buy = df[df['Buyer Broker'] == top_7_broker_list[i]]
         
-    try:
-        df_top_sell = df[df['Seller Broker'] == str(top_7_broker_list[i])]
-        if df_top_sell.empty:
-            df_top_sell = df[df['Seller Broker'] == int(top_7_broker_list[i])]
-            if df_top_sell.empty:
-                df_top_sell = df[df['Seller Broker'] == top_7_broker_list[i]]
-    except:
-        df_top_sell = df[df['Seller Broker'] == str(' ' + str(top_7_broker_list[(i)])+ ' ')]
+    # try:
+    df_top_sell = df[df['Seller Broker'] == s(top_7_broker_list[i])]
+    print('S', s)
+        # if df_top_sell.empty:
+        #     df_top_sell = df[df['Seller Broker'] == int(top_7_broker_list[i])]
+        #     if df_top_sell.empty:
+        #         df_top_sell = df[df['Seller Broker'] == top_7_broker_list[i]]
+    # except:
+    #     df_top_sell = df[df['Seller Broker'] == str(' ' + str(top_7_broker_list[(i)])+ ' ')]
     top_buyer = dict(Counter(dict(df_top_buy.groupby('Stock Symbol')['Amount'].sum())).most_common(5))
     top_seller = dict(Counter(dict(df_top_sell.groupby('Stock Symbol')['Amount'].sum())).most_common(5))
-    print(top_buyer, top_seller)
+    
     all_buyer_details['top_{}_buyer'.format(i+1)] = top_buyer
     all_seller_details['top_{}_seller'.format(i+1)] = top_seller
 print('All buyer', all_buyer_details)
@@ -356,9 +372,18 @@ worksheet.set_column(1, 22, 23)
 #Top Buyer/seller Top 5 Stocks
 all_buyer_sector= {}
 all_seller_sector= {}
+if type(df_sector['Buyer Broker'][0]) == numpy.int64:
+    bs = int
+else:
+    bs= str
+if type(df_sector['Seller Broker'][0]) == numpy.int64:
+    ss = int
+else:
+    ss = str
 for i in range(len(top_7_broker_list)):
     try:
-        df_top_buy = df_sector[df_sector['Buyer Broker'] == str(top_7_broker_list[i])]
+        df_top_buy = df_sector[df_sector['Buyer Broker'] == bs(top_7_broker_list[i])]
+        print('BS', bs)
         if df_top_buy.empty:
             df_top_buy = df_sector[df_sector['Buyer Broker'] == int(top_7_broker_list[i])]
             if df_top_buy.empty:
@@ -366,7 +391,8 @@ for i in range(len(top_7_broker_list)):
     except:
         df_top_buy = df_sector[df_sector['Buyer Broker'] == str(' ' + str(top_7_broker_list[i])+ ' ')]
     try:
-        df_top_sell = df_sector[df_sector['Seller Broker'] == str(top_7_broker_list[i])]
+        df_top_sell = df_sector[df_sector['Seller Broker'] == ss(top_7_broker_list[i])]
+        print('SS', ss)
         if df_top_sell.empty:
             df_top_sell = df_sector[df_sector['Seller Broker'] == int(top_7_broker_list[i])]
             if df_top_sell.empty:
@@ -506,5 +532,8 @@ for col in range(2, 23, 3):
 writer.save()
 
 #Email send Automatic 
-email_sent()
+try:
+    email_sent()
+except:
+    print('Not sending email')
 print('Complete all and Sending Email ')
