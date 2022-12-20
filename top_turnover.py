@@ -88,7 +88,7 @@ df_data.to_csv('all_broker_details.csv')
 top_7_broker = df_data.sort_values(by= ['Turnover'], ascending= False)[:7]
 top_7_broker_list = top_7_broker['Broker'].to_list()
 print(type(top_7_broker_list))
-print(top_7_broker_list)
+print(type(top_7_broker_list[0]))
 #TOP-5 Buyer/seller on the basis of Broker
 #Top Buyer/seller Top 5 Stocks
 all_buyer_details= {}
