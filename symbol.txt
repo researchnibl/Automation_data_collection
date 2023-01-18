@@ -230,9 +230,6 @@ DLBS,Microfinance
 KLBS,Microfinance
 SIKLES,Hydro Power
 NSIF2,Mutual Fund
-NIB,Commercial Banks
-NIBPO,Commercial Banks
-MEGA,Commercial Banks
 CBL,Commercial Banks
 RMDC,Microfinance
 SKBBL,Microfinance
@@ -253,3 +250,6 @@ RLI,Life Insurance
 AKBSL,Microfinance
 PLI,Life Insurance
 BHPL,Hydro Power
+MLBSL,Microfinance
+STC,Trading
+MSLB,Microfinance
