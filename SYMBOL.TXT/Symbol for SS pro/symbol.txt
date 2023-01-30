@@ -26,7 +26,6 @@ OHL,Hotels And Tourism
 NHPC,Hydro Power
 BPCL,Hydro Power
 CHCL,Hydro Power
-STC,Tradings
 BBC,Tradings
 NUBL,Microfinance
 CBBL,Microfinance
@@ -231,24 +230,31 @@ DLBS,Microfinance
 KLBS,Microfinance
 SIKLES,Hydro Power
 NSIF2,Mutual Fund
-NIB,Commercial Banks
-NIBPO,Commercial Banks
-MEGA,Commercial Banks
 CBL,Commercial Banks
 RMDC,Microfinance
 SKBBL,Microfinance
-CCBL,Commercial Banks
-KBL,Commercial Banks
-CCBL,Commercial Banks
 SIL,Non Life Insurance
 PIC,Non Life Insurance
 PRIN,Non Life Insurance
 ADLB,Microfinance
 AIL,Non Life Insurance
-GBIME,Commercial Banks
-BOKL,Commercial Banks
 NMFBS,Microfinance
 NADEP,Microfinance
 SLI,Life Insurance
 SMFDB,Microfinance
 CYCL,Microfinance
+SHLB,Microfinance
+PHCL,Hydro Power
+EHPL,Hydro Power
+RLI,Life Insurance
+AKBSL,Microfinance
+PLI,Life Insurance
+BHPL,Hydro Power
+MLBSL,Microfinance
+STC,Tradings
+MSLB,Microfinance
+KBL,Commercial Banks
+LGIL,Non Life Insurance
+SIC, Non Life Insurance
+SJLIC, Life Insurance
+SGIC, Non Life Insurance  
