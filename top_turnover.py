@@ -537,7 +537,7 @@ for col in range(2, 23, 3):
     id = id + 1
     seller = seller + 1
 
-writer.save()
+writer.close()
 
 #Email send Automatic 
 try:
