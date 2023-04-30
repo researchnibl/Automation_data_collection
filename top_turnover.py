@@ -4,6 +4,7 @@ from collections import Counter
 import time 
 import xlsxwriter
 import pandas
+import os, glob
 
 from datetime import date
 from io import StringIO
@@ -47,7 +48,14 @@ def set_border(ws, cell_range):
     for row in ws[cell_range]:
         for cell in row:
             cell.border = Border(top=thin, left=thin, right=thin, bottom=thin)
-        
+
+files = glob.glob('data/*')
+for f in files:
+    os.remove(f)
+
+files = glob.glob('Daily_Report/*')
+for f in files:
+    os.remove(f)
 broker_name = broker_name_conversion()
 total_turnover = data_collection()  
 
