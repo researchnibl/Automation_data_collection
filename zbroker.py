@@ -56,10 +56,10 @@ for option in options:
     
 driver = webdriver.Chrome(options = chrome_options)
 
-# Here Chrome  will be used
-driver = webdriver.Chrome(executable_path= 'chromedriver')
-
-# driver = webdriver.Chrome(executable_path= '/home/laxmi/Documents/Kaggle_Project/chromedriver')
+# # Here Chrome  will be used
+# driver = webdriver.Chrome(executable_path= 'chromedriver')
+service = Service(executable_path='chromedriver')
+driver = webdriver.Chrome(service=service)
 # URL of website
 url = "https://www.nepalstock.com.np/floor-sheet"
 print('Collecting the data')
